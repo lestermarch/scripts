@@ -1,6 +1,20 @@
 # New-AzureGitHubRunner
 
-This script provisions an Azure VM and registers it as a self-hosted GitHub runner for the specified organization/repo. Azure CLI and GitHub CLI are required in order to run this script.
+This script provisions an Azure VM and registers it as a self-hosted GitHub runner for the specified organization/repo.
+
+> [!Note]
+> Azure CLI and GitHub CLI are required in order to run this script.
+
+## Software
+
+The following software is installed during provisioning:
+
+- Azure CLI
+- Docker
+- GitHub Runner Agent
+
+> [!Tip]
+> The script can be modified to install different software during provisioning by amending the `runcmd` configuration to suit your requirements.
 
 ## Usage
 
@@ -38,5 +52,6 @@ The following demonstrates example usage and values:
 > Make sure you are logged into the appropriate Azure subscription using the Azure CLI before deployment:
 >
 > ```bash
+> az login
 > az account set -s {{subscriptionId}}
 > ```
