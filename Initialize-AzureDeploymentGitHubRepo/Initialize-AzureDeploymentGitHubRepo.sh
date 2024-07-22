@@ -124,7 +124,7 @@ STORAGE_ACCOUNT_ID=$(az storage account show \
 az role assignment create \
   --assignee-object-id $IDENTITY_PRINCIPAL_ID \
   --assignee-principal-type ServicePrincipal \
-  --role "User Access Administrator" \
+  --role "Storage Blob Data Contributor" \
   --scope $STORAGE_ACCOUNT_ID
 
 for GITHUB_ENV in "${GITHUB_ENVS[@]}"; do
